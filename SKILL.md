@@ -1,10 +1,12 @@
 ---
 name: nextjs-app-router-modularization
 description: >
-  Apply this rule when working in a Next.js App Router project and you detect (or are asked to fix)
-  a file that mixes Server and Client concerns — for example, `export const metadata` alongside
-  `"use client"`, hooks in a Server Component, or a page file that has grown unwieldy (>200–300 LOC)
-  with interactive logic. Also triggers when creating new routes that need metadata AND interactivity.
+  Splits mixed Server/Client pages into separate files with clean boundaries — extracting client logic
+  into a `<DescriptiveName>Client.tsx` and rewriting `page.tsx` as a pure Server Component — and flags
+  repeated JSX structures for extraction into shared typed components. Apply when working in a Next.js
+  App Router project and you detect `export const metadata` alongside `"use client"`, hooks in a Server
+  Component, a page file that has grown unwieldy (>200–300 LOC) with interactive logic, or the same
+  layout block duplicated inline multiple times.
 ---
 
 ## Confirmation Required
